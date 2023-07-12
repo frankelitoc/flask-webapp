@@ -13,12 +13,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - name: Checkout Repo
+      uses: actions/checkout@v3
+
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag royal-docker:$GITHUB_SHA --tag royal-docker:latest
 
     - name: Push the Docker image
-    - uses: actions/checkout@v3
       run: docker push
   
   
