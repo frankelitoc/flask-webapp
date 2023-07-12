@@ -25,6 +25,6 @@ jobs:
     - name: Build & Push the Docker image
       run: |
        docker build . --file Dockerfile --tag testing:$GITHUB_SHA --tag testing:latest
-       docker push frank15ortiz/testing:$GITHUB_SHA
+       docker push ${{ secrets.DOCKER_USERNAME }}/testing:$GITHUB_SHA
   
   
