@@ -24,7 +24,7 @@ jobs:
 
     - name: Build & Push the Docker image
       run: |
-       docker build . --file Dockerfile --tag royal-docker:$GITHUB_SHA --tag royal-docker:latest
+       docker build . --file Dockerfile --tag testing:$GITHUB_SHA --tag testing:latest
        docker push frank15ortiz/testing:$GITHUB_SHA
   
   
