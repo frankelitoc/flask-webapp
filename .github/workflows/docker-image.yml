@@ -18,7 +18,7 @@ jobs:
       run: docker build . --file Dockerfile --tag royal-docker:$GITHUB_SHA --tag royal-docker:latest
 
     - name: Push the Docker image
-      uses: actions/checkout@v3
+    - uses: actions/checkout@v3
       run: docker push
   
   
