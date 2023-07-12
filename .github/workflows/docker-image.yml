@@ -25,6 +25,6 @@ jobs:
     - name: Build & Push the Docker image
       run: |
        docker build . --file Dockerfile --tag frank15ortiz/testing:$GITHUB_SHA --tag frank15ortiz/testing:latest
-       docker push frank15ortiz/testing:$GITHUB_SHA
+       docker push frank15ortiz/testing:$GITHUB_SHA & docker push frank15ortiz/testing:latest
   
   
