@@ -16,10 +16,12 @@ jobs:
     - name: Checkout Repo
       uses: actions/checkout@v3
 
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag royal-docker:$GITHUB_SHA --tag royal-docker:latest
+    - name: DockerHub Login
+      run: docker login frank15ortiz -p $DOCKER_TOKEN
 
-    - name: Push the Docker image
-      run: docker push
+    - name: Build & Push the Docker image
+      run: |
+       docker build . --file Dockerfile --tag royal-docker:$GITHUB_SHA --tag royal-docker:latest
+       docker push frank15ortiz/testing:$GITHUB_SHA
   
   
